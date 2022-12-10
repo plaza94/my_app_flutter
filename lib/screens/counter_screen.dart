@@ -40,13 +40,42 @@ class _CounterScreenState extends State<CounterScreen> {
         ),
       ),
       //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.plus_one),
-        onPressed: () {
-          //print('hola mundo');
-          counter++;
-          setState(() {});
-        },
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FloatingActionButton(
+            child: const Icon(Icons.plus_one),
+            onPressed: () {
+              //print('hola mundo');
+              counter++;
+              setState(() {});
+            },
+          ),
+          /*  const SizedBox(
+            width: 20,
+          ),*/
+          FloatingActionButton(
+            child: const Icon(Icons.restart_alt_sharp),
+            onPressed: () {
+              //print('hola mundo');
+              counter = 0;
+              setState(() {});
+            },
+          ),
+          /*const SizedBox(
+            width: 20,
+          ),*/
+          FloatingActionButton(
+            child: const Icon(Icons.exposure_minus_1),
+            onPressed: () {
+              //print('hola mundo');
+              counter--;
+              setState(() {});
+            },
+          ),
+        ],
       ),
     );
   }
